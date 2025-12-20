@@ -16,7 +16,7 @@ interface ProfileProps {
 type TabType = 'USER_INFO' | 'ADDRESS' | 'CARDS' | 'NOTIFICATIONS' | 'PASSWORD' | 'ORDERS' | 'OFFERS' | 'COUPONS';
 
 export const Profile: React.FC<ProfileProps> = ({ onGoHome, customRequests, orders, coupons, onCancelOrder, onReturnOrder }) => {
-    const { user, logout } = useAuth();
+    const { user, signOut } = useAuth();
     const [activeTab, setActiveTab] = useState<TabType>('USER_INFO');
     const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
     const [reviewModalOpen, setReviewModalOpen] = useState(false);
@@ -46,8 +46,8 @@ export const Profile: React.FC<ProfileProps> = ({ onGoHome, customRequests, orde
     });
 
     const [savedCards, setSavedCards] = useState([
-        { id: 1, last4: '4242', holder: user?.fullName || 'KULLANICI', expiry: '12/25', type: 'Mastercard' },
-        { id: 2, last4: '8899', holder: user?.fullName || 'KULLANICI', expiry: '09/26', type: 'Visa' }
+        { id: 1, last4: '4242', holder: user?.user_metadata?.full_name || 'Kullanıcı', expiry: '12/25', type: 'Mastercard' },
+        { id: 2, last4: '8899', holder: user?.user_metadata?.full_name || 'Kullanıcı', expiry: '09/26', type: 'Visa' }
     ]);
 
     if (!user) {
@@ -56,7 +56,7 @@ export const Profile: React.FC<ProfileProps> = ({ onGoHome, customRequests, orde
     }
 
     const handleLogout = () => {
-        logout();
+        signOut();
         onGoHome();
     };
 
@@ -127,9 +127,9 @@ export const Profile: React.FC<ProfileProps> = ({ onGoHome, customRequests, orde
                     <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden sticky top-24">
                         <div className="p-6 border-b border-slate-100 text-center">
                             <div className="w-20 h-20 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 mx-auto mb-4 text-2xl font-bold">
-                                {user.fullName.charAt(0)}
+                                {user?.user_metadata?.full_name?.charAt(0) || 'K'}
                             </div>
-                            <h2 className="font-bold text-slate-900">{user.fullName}</h2>
+                            <h2 className="font-bold text-slate-900">{user?.user_metadata?.full_name || 'Kullanıcı'}</h2>
                             <p className="text-xs text-slate-500">{user.email}</p>
                         </div>
                         
@@ -171,7 +171,7 @@ export const Profile: React.FC<ProfileProps> = ({ onGoHome, customRequests, orde
                             <div className="space-y-4 max-w-lg">
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Ad Soyad</label>
-                                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-slate-900">{user.fullName}</div>
+                                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-slate-900">{user?.user_metadata?.full_name || 'Kullanıcı'}</div>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">E-posta</label>
@@ -179,7 +179,7 @@ export const Profile: React.FC<ProfileProps> = ({ onGoHome, customRequests, orde
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Kayıt Tarihi</label>
-                                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-slate-900">{user.joinDate}</div>
+                                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-slate-900">{user?.created_at ? new Date(user.created_at).toLocaleDateString('tr-TR') : 'Bilinmiyor'}</div>
                                 </div>
                             </div>
                         </div>

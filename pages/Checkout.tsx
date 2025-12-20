@@ -59,7 +59,8 @@ export const Checkout: React.FC<CheckoutProps> = ({ items, onPlaceOrder, total, 
         installments: 1
     });
 
-    const { isAuthenticated } = useAuth();
+    const { user } = useAuth();
+    const isAuthenticated = !!user;
 
     // Calculate total quantity
     const totalItemCount = items.reduce((acc, item) => acc + item.quantity, 0);

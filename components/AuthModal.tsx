@@ -18,7 +18,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMo
     const [fullName, setFullName] = useState('');
     const [resetSent, setResetSent] = useState(false);
     const [isLoading, setIsLoading] = useState(false); // Yükleniyor durumu
-    const { login } = useAuth();
+    const { signIn, signUp, signInWithGoogle } = useAuth();
 
     useEffect(() => {
         if(isOpen) {
@@ -50,23 +50,30 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMo
 
         setIsLoading(true);
         
-        // İşlemi biraz bekletip gerçekçi hissettirelim
-        setTimeout(() => {
-            const nameToUse = mode === 'REGISTER' ? fullName : 'Misafir Kullanıcı';
-            login(email, nameToUse);
-            // Not: onClose() burada çağrılmıyor çünkü App.tsx'teki useEffect state değişimini dinleyip kapatacak.
-            setIsLoading(false); 
-        }, 800);
+        try {
+            if (mode === 'REGISTER') {
+                await signUp(email, password, fullName);
+            } else {
+                await signIn(email, password);
+            }
+            // Modal otomatik kapanacak çünkü auth state değişecek
+        } catch (error) {
+            console.error('Auth error:', error);
+            // Hata durumunda kullanıcıya gösterilebilir
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const handleSocialLogin = (provider: 'Google') => {
         setIsLoading(true);
-        // Google giriş simülasyonu
-        setTimeout(() => {
-            login(`${provider.toLowerCase()}@user.com`, `${provider} User`);
-            // Not: onClose() burada çağrılmıyor çünkü App.tsx'teki useEffect state değişimini dinleyip kapatacak.
+        try {
+            signInWithGoogle();
+        } catch (error) {
+            console.error('Social login error:', error);
+        } finally {
             setIsLoading(false);
-        }, 1000);
+        }
     };
 
     return (

@@ -260,7 +260,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
             <aside className={`w-64 border-r fixed h-full z-20 ${darkMode ? 'bg-slate-950 border-slate-800' : 'bg-white border-slate-200'}`}>
                 <div className={`p-6 flex items-center gap-2 border-b ${darkMode ? 'border-slate-800' : 'border-slate-100'}`}>
                     <Printer size={24} />
-                    <h1 className="text-xl font-bold">Bulut 3D</h1>
+                    <h1 className="text-xl font-bold">PrintShop</h1>
                     <button onClick={() => setDarkMode(!darkMode)} className="ml-auto p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
                         {darkMode ? <Sun size={16} /> : <Moon size={16} />}
                     </button>

@@ -730,7 +730,7 @@ if (loading) {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                             <div className="col-span-1 md:col-span-2">
-                                <h3 className="text-slate-900 text-lg font-bold mb-4">BULUT 3D</h3>
+                                <h3 className="text-slate-900 text-lg font-bold mb-4">PRINTSHOP</h3>
                                 <p className="text-sm leading-relaxed max-w-xs text-slate-700">Butik üretim anlayışıyla, hayalinizdeki tasarımları en yüksek kalitede basıyoruz.</p>
                             </div>
                             <div>
@@ -763,7 +763,7 @@ if (loading) {
                         </div>
                         <div className="mt-6 pt-4 border-t border-slate-300 text-xs flex flex-col md:flex-row justify-between items-center text-slate-600 gap-4">
                             <div className="flex gap-4 items-center">
-                                <span>&copy; 2024 Bulut 3D. Tüm hakları saklıdır.</span>
+                                <span>&copy; 2024 PrintShop. Tüm hakları saklıdır.</span>
                             </div>
                             <div className="font-medium">
                                 Powered and Developed By <a href="https://github.com/worldestroyer55" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-bold hover:text-brand-600 hover:underline transition-colors">Hasan Basri Engin</a>

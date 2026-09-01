@@ -92,7 +92,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMo
                          <img src="https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-cover" alt="bg" />
                     </div>
                     <div className="z-10 text-center">
-                        <h2 className="text-2xl font-bold text-white tracking-tight">Bulut 3D</h2>
+                        <h2 className="text-2xl font-bold text-white tracking-tight">PrintShop</h2>
                         <p className="text-brand-100 text-sm font-medium">Atölye Satış Portalı</p>
                     </div>
                     <button 

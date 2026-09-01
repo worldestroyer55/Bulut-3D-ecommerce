@@ -1,9 +1,9 @@
 @echo off
-title Bulut 3D - Uygulama Baslatici
+title PrintShop - E-Commerce Web Site - Uygulama Baslatici
 color 0b
 
 echo ===========================================
-echo        BULUT 3D UYGULAMASI BASLATILIYOR
+echo    PRINTSHOP E-COMMERCE WEB SITE BASLATILIYOR
 echo ===========================================
 
 :: 1. Node_modules kontrolü

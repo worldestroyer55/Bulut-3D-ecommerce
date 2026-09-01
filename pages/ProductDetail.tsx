@@ -23,7 +23,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, onBack, o
     const mockReviews: Review[] = [
         { id: 1, userName: "Mert Y.", rating: 5, comment: "Baskı kalitesi inanılmaz! Detaylar çok net çıkmış.", date: "10 Kasım 2024" },
         { id: 2, userName: "Selin K.", rating: 4, comment: "Kargo biraz geç geldi ama paketleme çok iyiydi. Ürün harika.", date: "12 Kasım 2024" },
-        { id: 3, userName: "Caner D.", rating: 5, comment: "Tam istediğim renkte geldi. Teşekkürler Bulut 3D!", date: "15 Aralık 2024" }
+        { id: 3, userName: "Caner D.", rating: 5, comment: "Tam istediğim renkte geldi. Teşekkürler PrintShop!", date: "15 Aralık 2024" }
     ];
     
     // Gallery Logic

@@ -35,7 +35,7 @@ export const Home: React.FC<HomeProps> = ({
                 <div className="max-w-3xl animate-fade-in py-8 flex flex-col items-center">
                     <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full text-brand-700 font-semibold mb-6 shadow-sm border border-white/50">
                         <Cloud size={20} className="fill-brand-200" />
-                        <span>Bulut 3D Atölyesi</span>
+                        <span>PrintShop Atölyesi</span>
                     </div>
                     <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-6 text-slate-900 leading-[1.1]">
                         Hayalinizdeki <br/>
@@ -143,7 +143,7 @@ export const Home: React.FC<HomeProps> = ({
                 <div className="flex justify-between items-end mb-10">
                     <div>
                         <h2 className="text-3xl font-black text-slate-900">Öne Çıkan Ürünler</h2>
-                        <p className="text-slate-500 mt-2 font-medium">Bulut 3D atölyesinin en çok tercih edilen tasarımları.</p>
+                        <p className="text-slate-500 mt-2 font-medium">PrintShop atölyesinin en çok tercih edilen tasarımları.</p>
                     </div>
                     <button 
                         onClick={() => onOpenCatalog('Tüm Ürünler', products)}

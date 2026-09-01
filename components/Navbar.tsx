@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                             {!logoError ? (
                                 <img 
                                     src="/logo.png" 
-                                    alt="Bulut 3D Logo" 
+                                    alt="PrintShop Logo"
                                     className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                                     onError={() => setLogoError(true)}
                                 />
@@ -123,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                                 </div>
                             )}
                             <div>
-                                <span className="text-xl font-bold tracking-tight text-slate-900 block leading-none">BULUT 3D</span>
+                                <span className="text-xl font-bold tracking-tight text-slate-900 block leading-none">PRINTSHOP</span>
                                 <span className="text-xs text-slate-500 font-medium tracking-wider">ATÖLYE & MARKET</span>
                             </div>
                         </div>
